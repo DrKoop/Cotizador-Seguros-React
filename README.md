@@ -4,4 +4,4 @@ useContext API Cotizador de Seguros - useState - useRef - useEffect - useCallbac
 - Validacion Formulario.
 - useCallback para evitar el re-render, para mejorar la experiencia de usuario .
 
-![1](https://github.com/DrKoop/Cotizador-Sguros-React/assets/95058605/8d44b4f4-c662-4ad5-a648-26d32ee7da6f)
+![1](https://github.com/DrKoop/Cotizador-Seguros-React/assets/95058605/c2c14c2d-4044-4a02-a4b6-398ba36b4b1e)
