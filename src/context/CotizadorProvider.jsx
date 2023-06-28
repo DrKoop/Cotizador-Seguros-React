@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { obtenerDiferenciaYear, calcularPorcentajePorMarca, calcularPlan, formatearDinero } from "../helpers";
+import Formulario from "../components/Formulario";
 
 
 const CotizadorContext = createContext()
@@ -29,11 +30,14 @@ const CotizadorProvider = ({children}) => {
         })
     }
 
+    const [cantidad, setCantidad ] = useState(0)
+
+
     const [ resultado, setResultado ] = useState(0)
 
     const cotizarSeguro = () => {
         //Informacion Base 
-        let resultado = 2000
+        let resultado = cantidad
 
         //Obtener diferencia de años
 
@@ -73,7 +77,9 @@ const CotizadorProvider = ({children}) => {
                 setError,
                 cotizarSeguro,
                 resultado,
-                cargando
+                cargando,
+                cantidad,
+                setCantidad
             }}
         >
             {children}
