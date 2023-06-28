@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
 import Error from "./Error"
 import { MARCAS , YEARS, PLANES} from "../constants"
 import useCotizador from "../hooks/useCotizador"
@@ -6,7 +6,7 @@ import useCotizador from "../hooks/useCotizador"
 
 const Formulario = () => {
 
-    const { datos, handleChangeDatos, error, setError, cotizarSeguro } = useCotizador()
+    const { datos, handleChangeDatos, error, setError, cotizarSeguro , setCantidad , cantidad } = useCotizador()
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -20,13 +20,23 @@ const Formulario = () => {
         cotizarSeguro()
     }
 
+    //const [cantidad, setCantidad ] = useState(0)
+
+    //console.log(cantidad)
     
   return (
     <>
         {error && <Error/>}
         <form 
             onSubmit={handleSubmit}
-        >
+        >   
+            <label htmlFor="" className="block mb-3 font-bold text-gray-400 uppercase">Introduzca la Cantidad :</label>
+            <input
+                type="number"
+                className="w-full p-3 bg-white border border-gray-200"
+                value={ cantidad }
+                onChange={ e => setCantidad( Number( e.target.value ) ) }
+            />
             <div className="my-5">
                 <label htmlFor="" className="block mb-3 font-bold text-gray-400 uppercase">Marca</label>
                 <select 
